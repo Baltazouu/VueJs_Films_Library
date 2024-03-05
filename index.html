@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+    </div>
+    <script type="module">
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
+        import NavbarComponent from '/src/view/NavbarComponent.js';
+
+        const TITLE = "TEST"
+
+        const app = createApp({
+                //La méthode created() est appelée à la création de l'application
+                created() {
+                    document.title = TITLE; //Initialisation de la base <title> à la création de l'application
+                },data() {
+                    return {
+                        title: TITLE
+                    }
+                }
+            });
+
+
+        app.component('NavbarComponent', NavbarComponent);
+        app.mount('#app');
+    </script>
+
+</body>
+
+</html>
