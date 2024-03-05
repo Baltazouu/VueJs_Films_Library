@@ -6,7 +6,7 @@ export default {
 
             const linkService = new LinkService();
 
-            links:[] = linkService.getlinks();
+            const links = linkService.getLinks();
             this.$emit('displayLinks', links);
         }
     },
@@ -17,7 +17,7 @@ export default {
             <h1>Navbar</h1>
 
                     <div v-for = "link in links" :key = "links.id">
-                        <a href={{ link.label }}>lien</a>
+                        <a :href="link.link">{{ link.label }}</a>
                     </div>
         </section>
         `
