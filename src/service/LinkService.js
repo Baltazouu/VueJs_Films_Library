@@ -1,7 +1,12 @@
+import Link from "../model/Link.js";
 
-class LinkService {
+export default class LinkService {
   constructor() {
-    this.links = [];
+    this.links = [
+        new Link(1, 'Google', 'http://www.google.com'),
+        new Link(2, 'Yahoo', 'http://www.yahoo.com'),
+        new Link(3, 'Bing', 'http://www.bing.com')
+    ];
   }
 
   getLinks() {

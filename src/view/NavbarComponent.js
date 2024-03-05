@@ -1,13 +1,16 @@
+import LinkService from "../service/LinkService.js";
+
 export default {
     methods: {
-        displayLinks: function() {
-            links:[] = getlinks();
+        displayLinks: function () {
+
+            const linkService = new LinkService();
+
+            links:[] = linkService.getlinks();
             this.$emit('displayLinks', links);
         }
     },
-    components:{
-
-    },
+    components: {},
     template:
         `
         <section>
