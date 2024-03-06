@@ -10,9 +10,12 @@ export default class LinkService {
   }
 
   getLinks() {
-    return this.links;
+    return [
+      new Link(1, "Tous les films", "#"),
+      new Link(2, "Ajouter un film", "#")
+    ];
   }
-
+  
   getLink(url){
     return this.links.find(link => link.url === url);
   }
