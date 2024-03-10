@@ -5,6 +5,5 @@ export class Movie{
         this.title=title;
         this.description=description;
         this.image=image;
-
     }
 }

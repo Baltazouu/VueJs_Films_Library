@@ -1,19 +1,26 @@
-function displayAllFilms(films) {
-    // Créer un élément div pour contenir tous les films
-    const filmsContainer = document.createElement('div');
+import {Movie} from "../model/Movie.js";
 
-    // Parcourir tous les films
-    films.forEach(film => {
-        // Créer un élément app-film
-        const appFilm = document.createElement('app-film');
+export default class MovieService {
+    displayAllFilms() {
+        try {
+            const filmsContainer = document.createElement('div');
 
-        // Définir les propriétés du film sur l'élément app-film
-        appFilm.setAttribute('film', JSON.stringify(film));
+            const movies = this.getMovies();
+            movies.forEach(movie => {
+                const appFilm = document.createElement('app-film');
+                appFilm.setAttribute('film', JSON.stringify(movie));
 
-        // Ajouter l'élément app-film au conteneur des films
-        filmsContainer.appendChild(appFilm);
-    });
+                filmsContainer.appendChild(appFilm);
+            });
 
-    // Ajouter le conteneur des films au corps du document
-    document.body.appendChild(filmsContainer);
+            document.body.appendChild(filmsContainer);
+        } catch (error) {
+            console.error('Error parsing movies data:', error);
+        }
+    }
+
+
+    getMovies(){
+
+    }
 }

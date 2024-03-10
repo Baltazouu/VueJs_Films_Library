@@ -3,17 +3,13 @@ import Link from "../model/Link.js";
 export default class LinkService {
   constructor() {
     this.links = [
-        new Link(1, 'Google', 'http://www.google.com'),
-        new Link(2, 'Yahoo', 'http://www.yahoo.com'),
-        new Link(3, 'Bing', 'http://www.bing.com')
+      new Link(1, "Tous les films", "/allMovies"),
+      new Link(2, "Ajouter un film", "/addMovie")
     ];
   }
 
   getLinks() {
-    return [
-      new Link(1, "Tous les films", "#"),
-      new Link(2, "Ajouter un film", "#")
-    ];
+    return this.links;
   }
   
   getLink(url){

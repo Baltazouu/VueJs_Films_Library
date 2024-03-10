@@ -1,34 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>TP Noté VueJS</title>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="https://unpkg.com/vue-router@4"></script>
+
+  <link rel="stylesheet" href="src/style/index.css">
+
 </head>
+
 <body>
-  <div id="app">
-    <h1>{{ title }}</h1>
-    <navbar-component @update-title="updateTitle"></navbar-component>
+
+<div id="app">
+
+  <navbar-component class="navbar-component" @update-title="updateTitle"></navbar-component>
+  <h1>{{ TITLE }}</h1>
+
+  <router-view></router-view>
+
 </div>
 
-  <script type="module">
-    import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
-    import NavbarComponent from '/src/view/NavbarComponent.js';
+<script type="module">
 
-    const TITLE = "TEST"
+  import NavbarComponent from './src/components/NavbarComponent.js';
+  import AddMovieComponent from "./src/view/AddMovieView.js";
+  import HomeView from "./src/view/HomeView.js";
 
-    const app = createApp({
-      data() {
-        return {
-          title: TITLE
-        }
-      },
-      methods: {
-        updateTitle(newTitle) {
-          this.title = newTitle;
-        }
+  const TITLE = "TP Vue JS"
+
+
+  const routes = [
+    { path: '/', component: HomeView },
+    { path: '/addMovie', component: AddMovieComponent },
+  ]
+
+  const router = VueRouter.createRouter({
+    history: VueRouter.createWebHashHistory(),
+    routes,
+  })
+
+  const app = Vue.createApp({
+    data() {
+      return {
+        title: TITLE
       }
-    });
+    },
+    methods: {
+      updateTitle(newTitle) {
+        this.title = newTitle;
+      }
+    }
+  })
+  app.use(router)
+  app.component('navbar-component', NavbarComponent);
+  app.mount('#app')
+</script>
 
-    app.component('navbar-component', NavbarComponent);
-    app.mount('#app');
-  </script>
 </body>
+
 </html>
+
