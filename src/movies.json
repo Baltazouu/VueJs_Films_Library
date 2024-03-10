@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "title": "The Shawshank Redemption",
+      "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+      "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.paramountabilene.com%2Fevent-calendar%2F2022-film-series%2Fthe-shawshank-redemption&psig=AOvVaw0VmH64pZ9BQ_rCgh0GorUZ&ust=1710171842423000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKDdiPSA6oQDFQAAAAAdAAAAABAE"
+    },
+    {
+      "id": 2,
+      "title": "The Godfather",
+      "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+      "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Ffr.wikipedia.org%2Fwiki%2FT%2527choupi&psig=AOvVaw2inNfT3wWE1zZ16717n4U-&ust=1710171889890000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOCDzIqB6oQDFQAAAAAdAAAAABAE"
+    },
+    {
+      "id": 3,
+      "title": "The Dark Knight",
+      "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+      "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fprogrammetv.ouest-france.fr%2Fdessin-anime%2Fdessin-anime%2Fla-vallee-des-fees-m77574615%2Fs01e01-la-fee-clochette-c34618997%2F&psig=AOvVaw0s_P_sUIOOHOo964xUmX3A&ust=1710171913675000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKCZjJaB6oQDFQAAAAAdAAAAABAI"
+    }
+]
+  
