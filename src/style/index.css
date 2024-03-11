@@ -22,3 +22,7 @@ form {
     justify-content: center;
     flex-direction: column;
 }
+
+.error{
+    color:red;
+}
