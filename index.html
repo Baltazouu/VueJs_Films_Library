@@ -14,7 +14,7 @@
 <div id="app">
 
   <navbar-component class="navbar-component" @update-title="updateTitle"></navbar-component>
-  <h1>{{ TITLE }}</h1>
+  <h1>{{ title }}</h1>
 
   <router-view></router-view>
 
@@ -24,14 +24,18 @@
 
   import NavbarComponent from './src/components/NavbarComponent.js';
   import AddMovieComponent from "./src/view/AddMovieView.js";
-  import HomeView from "./src/view/HomeView.js";
 
-  const TITLE = "TP Vue JS"
+
+  import HomeView from "./src/view/HomeView.js";
+  import AllMoviesView from "./src/view/AllMoviesView.js";
+
+  const title = "TP Vue JS"
 
 
   const routes = [
     { path: '/', component: HomeView },
     { path: '/addMovie', component: AddMovieComponent },
+    {path:'/allMovies',component:AllMoviesView}
   ]
 
   const router = VueRouter.createRouter({
@@ -42,7 +46,7 @@
   const app = Vue.createApp({
     data() {
       return {
-        title: TITLE
+        title: title
       }
     },
     methods: {
