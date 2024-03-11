@@ -1,3 +1,5 @@
+import {Movie} from "../model/Movie";
+
 export default {
     template: `
         <div>
@@ -38,21 +40,6 @@ export default {
 
     methods: {
 
-        validateDescription() {
-            this.descriptionTouched = true;
-            this.isDescriptionValid();
-        },
-
-        validateName() {
-            this.nameTouched = true;
-            this.isNameValid();
-        },
-
-        validateImg() {
-            this.imgTouched = true;
-            this.isImgValid();
-        },
-
         isDescriptionValid(){
             if(this.movieDescription.length < 20 || this.movieDescription.length > 100){
                 this.descriptionError = true;
@@ -81,6 +68,14 @@ export default {
         addMovie() {
             event.preventDefault();
             if(this.isDescriptionValid() && this.isImgValid() && this.isNameValid()){
+
+                const movie = new Movie(123,this.movieName,this.movieDescription,this.movieImgURL);
+
+                let movies = JSON.parse(localStorage.getItem('movies')) || [];
+                movies.push(movie)
+
+                localStorage.setItem('movies', JSON.stringify(movies));
+
                 console.log("Movie ajouté avec succès.")
             }
         }
