@@ -28,6 +28,7 @@
 
   import HomeView from "./src/view/HomeView.js";
   import AllMoviesView from "./src/view/AllMoviesView.js";
+  import MovieCardComponent from "./src/components/MovieCardComponent.js";
 
   const title = "TP Vue JS"
 
@@ -57,6 +58,7 @@
   })
   app.use(router)
   app.component('navbar-component', NavbarComponent);
+  app.component('movie-card', MovieCardComponent);
   app.mount('#app')
 </script>
 

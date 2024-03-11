@@ -14,17 +14,14 @@ export default {
             }
         }
     },
-    template:
-    `
-<template>
-    <section>
-        <h1>Movie Card</h1>
-        <div>
-            <h2>{{movie.title}}</h2>
-            <p>{{truncateDescription(movie.description)}}</p>
-            <img :src="movie.image" :alt="movie.title">
-        </div>
+    mounted(){
+        console.log("ICIC")
+    },
+    template:`
+        <section>
+        <h2>{{movie.title}}</h2>
+        <p>{{truncateDescription(movie.description)}}</p>
+        <img :src="movie.image" :alt="movie.title">        
     </section>
-</template>
 `
 }
