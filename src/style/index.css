@@ -10,6 +10,15 @@ body{
     justify-content: space-around;
 }
 
-h1{
+h1,h3{
     text-align: center;
+}
+
+
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

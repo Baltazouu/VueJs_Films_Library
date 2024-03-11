@@ -26,8 +26,6 @@ export default {
             <div v-for="link in links" :key="link.id">
                 <router-link :to="link.link" @click="handleClick(link)">{{ link.label }}</router-link>
             </div>
-
-            </li>
         </section>
        
     `,
