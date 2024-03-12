@@ -18,10 +18,10 @@ export default {
         console.log("ICIC")
     },
     template:`
-        <section>
-        <h2>{{movie.title}}</h2>
-        <p>{{truncateDescription(movie.description)}}</p>
-        <img :src="movie.image" :alt="movie.title">        
-    </section>
+        <div class="movieCard">
+            <h2>{{movie.title}}</h2>
+            <p>{{truncateDescription(movie.description)}}</p>
+            <img :src="movie.image" :alt="movie.title">        
+        </div>
 `
 }

@@ -1,31 +1,25 @@
-
+// Importez les données du fichier movies.js
+import { getMovies } from "../misc/movies.js";
 
 export default {
-
     data() {
-        return{ movies: [] }
+        return {
+            movies: []
+        };
     },
-
     mounted() {
-
-        this.movies = JSON.parse(localStorage.getItem('movies')) || [];
-
-
-        console.log("Movies: ")
-
-        console.log(this.movies)
-
+        const storedMovies = JSON.parse(localStorage.getItem('movies')) || [];
+        this.movies = [...storedMovies, ...getMovies()];
+        console.log("Movies: ", this.movies);
     },
-
-
-
-
     template: `
-        <h3>Les films à l'affiche</h3> 
-        
-         <div v-for="movie in movies" :key="movie.id">
-          <movie-card :movie="movie"></movie-card>
-         </div>
+        <div>
+            <h3>Films à l'affiche</h3>
+            <div class="allMovies">
+                <div v-for="movie in movies" :key="movie.id">
+                    <movie-card :movie="movie"/>
+                </div>
+            </div>
+        </div>
     `
-
-}
+};
