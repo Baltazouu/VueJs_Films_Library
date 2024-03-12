@@ -55,3 +55,10 @@ img {
     margin: 10px;
     background-color: #202c40;
 }
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Coins arrondis pour ressembler à une affiche de cinéma */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère pour effet de profondeur */
+}
