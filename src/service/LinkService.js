@@ -3,6 +3,7 @@ import Link from "../model/Link.js";
 export default class LinkService {
   constructor() {
     this.links = [
+      new Link(0,"Javascript TP Noté","/"),
       new Link(1, "Tous les films", "/allMovies"),
       new Link(2, "Ajouter un film", "/addMovie")
     ];

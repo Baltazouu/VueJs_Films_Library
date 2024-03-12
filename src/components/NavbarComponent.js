@@ -1,5 +1,4 @@
 import LinkService from "../service/LinkService.js";
-import MovieService from "../service/MovieService.js";
 
 export default {
     data() {
@@ -22,7 +21,6 @@ export default {
     },
     template: `
         <section id="navbar">
-            <h1>TP Vue JS</h1>
             <div v-for="link in links" :key="link.id">
                 <router-link :to="link.link" @click="handleClick(link)">{{ link.label }}</router-link>
             </div>

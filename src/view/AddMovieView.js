@@ -12,7 +12,7 @@ export default {
                 
                 <label for="description">Film Description : </label>
                 <textarea name="description" v-model="movieDescription" @focus="descriptionError = false" @blur="validateDescription"></textarea>
-                <span v-if="descriptionError && descriptionTouched" class="error">La description doit contenir entre 20 et 100 caractères</span>                
+                <span v-if="descriptionError && descriptionTouched" class="error">La description doit contenir entre 30 et 100 caractères</span>                
                 
                 <label for="imgURL">Image URL : </label>
                 <input name="imgURL" v-model="movieImgURL" @focus="imgError = false" @blur="validateImg"/>
@@ -56,7 +56,7 @@ export default {
         },
 
         isDescriptionValid(){
-            if(this.movieDescription.length < 20 || this.movieDescription.length > 100){
+            if(this.movieDescription.length < 30 || this.movieDescription.length > 100){
                 this.descriptionError = true;
                 return false;
             }
