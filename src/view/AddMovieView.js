@@ -88,7 +88,15 @@ export default {
         },
 
         addMovie(router) {
+
             event.preventDefault();
+
+            // validate fields to display error messages
+            this.validateDescription()
+            this.validateName()
+            this.validateImg()
+
+
             if(this.isDescriptionValid() && this.isImgValid() && this.isNameValid()){
 
                 const movie = new Movie(123,this.movieName,this.movieDescription,this.movieImgURL);
