@@ -29,16 +29,16 @@ export default {
     },
     template: `
     <div class="container">
-    <h3>Films à l'affiche</h3>
-    <label for="search">Rechercher Un Film : </label>
-    <input v-model="movieSearch" @input="moviesContains(movieSearch)" name="search">
-    <div class="row">
-    
-    <div class="col-lg-3 col-md-4 col-sm-6 mb-4" v-for="movie in movies" :key="movie.id">
-        <movie-card :movie="movie"></movie-card>
+        <h3 class="mb-4">Films à l'affiche</h3>
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="search">Rechercher un film</label>
+            <input v-model="movieSearch" @input="moviesContains(movieSearch)" id="search" name="search" type="text" class="form-control">
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4" v-for="movie in movies" :key="movie.id">
+                <movie-card :movie="movie"></movie-card>
+            </div>
+        </div>
     </div>
-   
-    </div>
-  </div>
     `
 };

@@ -62,3 +62,15 @@ img {
   border-radius: 10px; /* Coins arrondis pour ressembler à une affiche de cinéma */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère pour effet de profondeur */
 }
+
+#homeComponent{
+    background-image: url('/public/images/accueil.jpeg');
+    background-size: cover;
+}
+
+.vertical-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+  }

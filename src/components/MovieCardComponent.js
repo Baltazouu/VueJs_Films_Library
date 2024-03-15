@@ -29,7 +29,7 @@ export default {
     mounted() {},
     template: `
     <div class="card h-100">
-      <img :src="movie.image" class="card-img-top" alt="...">
+      <img :src="movie.image" class="card-img-top h-100" alt="...">
       <div class="card-body">
         <h5 class="card-title" :style="{ color: color }">{{ movie.title }}</h5>
         <p class="card-text">{{ truncateDescription(movie.description) }}</p>
