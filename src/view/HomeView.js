@@ -3,14 +3,13 @@ export default {
 
     template:`
  
-    <p>Home View</p>
     
     
     <h3>TP Noté Javascript WEB 2A</h3>
-    
-    <p>Noa Sillard</p>
-    <br>
-    <p>Dudonné Baptiste</p>
+   
+    <div class="d-flex justify-content-center">
+    <p>Noa Sillard & Dudonné Baptiste</p>
+    </div>
     
     `
 
