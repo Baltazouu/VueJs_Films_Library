@@ -91,7 +91,6 @@ export default {
 
             event.preventDefault();
 
-            // validate fields to display error messagesnp
             this.validateDescription()
             this.validateName()
             this.validateImg()

@@ -29,7 +29,8 @@ export default {
     mounted() {},
     template: `
     <div class="card h-100">
-      <img :src="movie.image" class="card-img-top h-100" alt="...">
+      <img v-if="movie.image" :src="movie.image" class="card-img-top h-100" alt="film poster">
+      <img v-else src="https://static.vecteezy.com/system/resources/previews/005/337/799/non_2x/icon-image-not-found-free-vector.jpg" class="card-img-top h-100" alt="default film poster">
       <div class="card-body">
         <h5 class="card-title" :style="{ color: color }">{{ movie.title }}</h5>
         <p class="card-text">{{ truncateDescription(movie.description) }}</p>
