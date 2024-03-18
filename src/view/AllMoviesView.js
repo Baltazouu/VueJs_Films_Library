@@ -27,6 +27,8 @@ export default {
 
                 const storedMovies = JSON.parse(localStorage.getItem('movies')) || [];
                 this.movies = [...apiMovies, ...storedMovies, ...getMovies()];
+
+                // copy movies to avoid to call the api each time
                 this.defaultMovies = this.movies;
 
 
@@ -38,6 +40,7 @@ export default {
     methods:{
         moviesContains(text){
             // reset movie list
+
             this.movies = this.defaultMovies;
 
             if(text.trim() === ''){
