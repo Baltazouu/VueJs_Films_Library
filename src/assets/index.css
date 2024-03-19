@@ -64,7 +64,7 @@ img {
 }
 
 #homeComponent{
-    background-image: url('/public/images/accueil.jpeg');
+    background-image: url('/src/assets/home.jpeg');
     background-size: cover;
 }
 
