@@ -6,51 +6,48 @@ export default {
     data() {
         return {
             movies: [],
-            defaultMovies:[],
             movieSearch:""
         };
     },
     mounted() {
-        const APIService = new ApiService();
-
-        const apiMovies = [];
-        let id = 0;
-
-        APIService.get('https://my-json-server.typicode.com/horizon-code-academy/fake-movies-api/movies')
-            .then(data => {
-                console.log(data);
-
-                data.forEach(movie => {
-                    apiMovies.push(new Movie(id, movie.Title, "No Description", movie.Poster));
-                    id += 1;
-                });
-
-                const storedMovies = JSON.parse(localStorage.getItem('movies')) || [];
-                this.movies = [...apiMovies, ...storedMovies, ...getMovies()];
-
-                // copy movies to avoid to call the api each time
-                this.defaultMovies = this.movies;
-
-
-            })
-            .catch(error => {
-                console.error('Une erreur s\'est produite lors de la récupération des données:', error);
-            })
+        this.initMovies(); // pas besoin d'await ici
     },
     methods:{
-        moviesContains(text){
-            // reset movie list
+            async initMovies() {
+                try {
+                    const APIService = new ApiService();
+                    const apiMovies = [];
+                    let id = 0;
 
-            this.movies = this.defaultMovies;
+                    const data = await APIService.get('https://my-json-server.typicode.com/horizon-code-academy/fake-movies-api/movies');
+                    console.log(data);
 
-            if(text.trim() === ''){
-                return;
+                    data.forEach(movie => {
+                        apiMovies.push(new Movie(id, movie.Title, "No Description", movie.Poster));
+                        id += 1;
+                    });
+
+                    const storedMovies = JSON.parse(localStorage.getItem('movies')) || [];
+                    this.movies = [...apiMovies, ...storedMovies, ...getMovies()];
+
+                } catch (error) {
+                    console.error('Une erreur s\'est produite lors de la récupération des données:', error);
+                }
+            },
+
+            async moviesContains(text) {
+                await this.initMovies();
+
+                if (text.trim() === '') {
+                    return;
+                }
+
+                this.movies = this.movies.filter(movie =>
+                    movie.title.toLowerCase().includes(text.toLowerCase())
+                );
             }
-
-            this.movies = this.movies.filter(movie => movie.title.toLowerCase().includes(text.toLowerCase()));
-        }
-    },
-    template: `
+        },
+        template: `
     <div class="container">
         <div class="input-group mb-3">
             <label class="input-group-text" for="search">Rechercher un film</label>
@@ -64,4 +61,4 @@ export default {
         </div>
     </div>
     `
-};
+}
