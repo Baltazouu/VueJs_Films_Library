@@ -1,0 +1,15 @@
+{
+  "name": "small-vue-js-project",
+  "version": "1.0.0",
+  "description": "A small Vue.js project",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "^14.0.1"
+  }
+}
