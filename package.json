@@ -4,12 +4,13 @@
   "description": "A small Vue.js project",
   "main": "index.js",
   "scripts": {
-    "start": "npx serve"
+    "start": "serve"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "serve": "^14.0.1"
+    "serve": "^14.0.1",
+    "@vue/cli-service": "^5.0.0"
   }
 }
